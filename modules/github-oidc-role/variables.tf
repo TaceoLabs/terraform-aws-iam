@@ -41,3 +41,11 @@ variable "ecr_push_policy" {
   })
   default = {}
 }
+
+variable "benchmark_policy" {
+  description = "Benchmark policy for creating AWS resources for GitHub Actions OIDC role"
+  type = object({
+    enabled         = optional(bool, false)
+  })
+  default = {}
+}
