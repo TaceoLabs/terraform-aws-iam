@@ -3,7 +3,7 @@ data "aws_iam_policy_document" "github_s3_policy" {
   statement {
     effect    = "Allow"
     actions   = ["s3:PutObject"]
-    resources = ["*"]
+    resources = [var.s3_policy.bucket_arn]
   }
 }
 
