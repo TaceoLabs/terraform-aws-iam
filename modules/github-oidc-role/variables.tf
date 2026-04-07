@@ -42,3 +42,12 @@ variable "ecr_push_policy" {
   })
   default = {}
 }
+
+variable "s3_policy" {
+  description = "S3 policy configuration for GitHub Actions OIDC role"
+  type = object({
+    enabled     = optional(bool, true)
+    bucket_arns = optional(list(string), ["*"])
+  })
+  default = {}
+}
