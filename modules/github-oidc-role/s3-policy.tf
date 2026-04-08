@@ -2,7 +2,7 @@ data "aws_iam_policy_document" "github_s3_policy" {
   #TODO Reduce permissions to only necessary resources
   statement {
     effect    = "Allow"
-    actions   = ["s3:PutObject"]
+    actions   = ["s3:PutObject", "s3:ListBucket"]
     resources = var.s3_policy.bucket_arns
   }
 }
